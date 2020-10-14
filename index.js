@@ -8,6 +8,22 @@ const init = async () => {
         host: 'localhost'
     });
 
+    server.route({
+      method: 'GET',
+      path: '/',
+      handler: (request, h) => {
+          return 'Hello World!';
+      }
+    });
+
+    server.route({
+      path: '/{id}',
+      method: 'GET',
+      handler: (request, h) => {
+        return `Offer ID: ${encodeURIComponent(request.params.id)}`;
+      }
+    });
+
     await server.start();
 
     console.log('Server running on %s', server.info.uri);
