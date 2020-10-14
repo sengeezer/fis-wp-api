@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/sengeezer/fis-wp-api/issues"
   },
-  "homepage": "https://github.com/sengeezer/fis-wp-api#readme"
+  "homepage": "https://github.com/sengeezer/fis-wp-api#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.1"
+  }
 }
