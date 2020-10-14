@@ -1,0 +1,29 @@
+{
+  "name": "fis-wp-api",
+  "version": "0.0.1",
+  "description": "FIS WP code screen API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sengeezer/fis-wp-api.git"
+  },
+  "keywords": [
+    "FIS",
+    "WP",
+    "API",
+    "code",
+    "screen",
+    "test",
+    "challenge",
+    "HAPI"
+  ],
+  "author": "Fabio M. Albertin <fabio@albertin.co.uk> (http://ifab.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sengeezer/fis-wp-api/issues"
+  },
+  "homepage": "https://github.com/sengeezer/fis-wp-api#readme"
+}
