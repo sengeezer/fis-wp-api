@@ -6,6 +6,7 @@ A simple offers API written as a coding exercise.
 
 * Clone this repository.
 * Run `npm install` from the main directory.
+* Run `npm start` to start the API server.
 
 ## Available routes
 
