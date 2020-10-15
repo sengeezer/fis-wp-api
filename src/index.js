@@ -17,7 +17,15 @@ const init = async () => {
     });
 
     server.route({
-      path: '/{id}',
+      method: 'GET',
+      path: '/offers',
+      handler: (request, h) => {
+          return 'Offers API';
+      }
+    });
+
+    server.route({
+      path: '/offers/{id}',
       method: 'GET',
       handler: (request, h) => {
         return `Offer ID: ${encodeURIComponent(request.params.id)}`;
