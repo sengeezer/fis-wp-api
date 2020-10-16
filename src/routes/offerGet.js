@@ -5,10 +5,11 @@ const getOfferRoute = {
   method: 'GET',
   path: '/offers',
   options: {
+    auth: false,
     validate: {
       query: {
-        start: Joi.number().min(0).default(0).notes('Start index of results inclusive'),
-        results: Joi.number().min(1).max(100).default(10).notes('Number of results to return')
+        start: Joi.number().min(0).default(0).note('Start index of results inclusive'),
+        results: Joi.number().min(1).max(100).default(10).note('Number of results to return')
       }
     },
     description: 'Get offers',

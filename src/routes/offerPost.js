@@ -5,9 +5,10 @@ const getOfferRoute = {
   method: 'POST',
   path: '/offers',
   options: {
+    auth: false,
     validate: {
       payload: {
-        item: Joi.string().required().notes('Text to store in list')
+        item: Joi.string().required().note('Text to store in list')
       },
     },
     description: 'Add offer',

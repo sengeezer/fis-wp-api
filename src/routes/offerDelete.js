@@ -5,9 +5,10 @@ const deleteOfferRoute = {
   method: 'DELETE',
   path: '/offers',
   options: {
+    auth: false,
     validate: {
       payload: {
-        index: Joi.number().min(0).required().notes('Index to delete')
+        index: Joi.number().min(0).required().note('Index to delete')
       }
     },
     description: 'Delete offer',
