@@ -14,8 +14,8 @@ const init = async (serverOptions, options) => {
     );
 
     await server.register([
-      require('vision'),
-      require('inert'),
+      require('@hapi/vision'),
+      require('@hapi/inert'),
       {
         plugin: require('lout'),
         options: {
@@ -23,17 +23,17 @@ const init = async (serverOptions, options) => {
         }
       },
       {
-        plugin: require('good'),
+        plugin: require('@hapi/good'),
         options: {
           ops: { interval: 1000 },
           reporters: {
             consoleReporter: [
               {
-                module: 'good-squeeze',
+                module: '@hapi/good-squeeze',
                 name: 'Squeeze',
                 args: [{response: '*'}]
               },
-              { module: 'good-console' },
+              { module: '@hapi/good-console' },
               'stdout'
             ]
           }
@@ -41,9 +41,9 @@ const init = async (serverOptions, options) => {
       }
     ]);
 
-    server.route(require('./routes.js'));
+    server.route(require('./routes'));
 
-
+    /**
     server.route({
       method: 'GET',
       path: '/',
@@ -67,6 +67,7 @@ const init = async (serverOptions, options) => {
         return `Offer ID: ${encodeURIComponent(request.params.id)}`;
       }
     });
+    */
     
     // await server.start();
 

@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const Boom = require('boom');
+const Boom = require('@hapi/boom');
 
 const deleteOfferRoute = {
   method: 'DELETE',
