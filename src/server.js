@@ -17,9 +17,9 @@ const init = async (serverOptions, options) => {
       require('@hapi/vision'),
       require('@hapi/inert'),
       {
-        plugin: require('lout'),
+        plugin: require('hapi-ending'),
         options: {
-          endpoint: '/docs'
+          enabled: true
         }
       },
       {

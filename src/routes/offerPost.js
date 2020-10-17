@@ -7,13 +7,13 @@ const getOfferRoute = {
   options: {
     auth: false,
     validate: {
-      payload: {
+      payload: Joi.object({
         item: Joi.string().required().note('Text to store in list')
-      },
+      })
     },
     description: 'Add offer',
     notes: 'Add an offer',
-    tags: ['api'],
+    tags: ['api']
   },
   handler: async (request, h) => {
     // let { sub: redispath } = request.auth.credentials;

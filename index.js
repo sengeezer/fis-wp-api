@@ -30,7 +30,7 @@ const init = async () => {
   await server.start();
 
   console.log(`Server running at: ${server.info.uri}`);
-  console.log(`Server docs running at: ${server.info.uri}/docs`);
+  // console.log(`Server docs running at: ${server.info.uri}/docs`);
 };
 
 process.on('unhandledRejection', err => {

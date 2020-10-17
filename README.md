@@ -12,6 +12,5 @@ A simple offers API written as a coding exercise.
 
 ## Available routes
 
-* `offers/`: A "hello world" test route.
-* `offers/{id}`: Request a single offer.
+* Go to [http://localhost:3000] after starting the server to see the API documentation.
 
