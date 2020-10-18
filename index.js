@@ -20,6 +20,8 @@ const init = async () => {
   redisClient.llenAsync = promisify(redisClient.llen).bind(redisClient);
   redisClient.lremAsync = promisify(redisClient.lrem).bind(redisClient);
   redisClient.lsetAsync = promisify(redisClient.lset).bind(redisClient);
+  redisClient.lposAsync = promisify(redisClient.lpos).bind(redisClient);
+  redisClient.lindexAsync = promisify(redisClient.lindex).bind(redisClient);
 
   redisClient.on('error', err => {
     console.error('Redis error:', err);
@@ -29,8 +31,8 @@ const init = async () => {
 
   await server.start();
 
-  console.log(`Server running at: ${server.info.uri}`);
-  // console.log(`Server docs running at: ${server.info.uri}/docs`);
+  console.log(`Offers API server running at: ${server.info.uri}/offers`);
+  console.log(`Offers API server docs running at: ${server.info.uri}`);
 };
 
 process.on('unhandledRejection', err => {

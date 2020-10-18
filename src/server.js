@@ -45,22 +45,6 @@ const init = async (serverOptions, options) => {
 
     /**
     server.route({
-      method: 'GET',
-      path: '/',
-      handler: (request, h) => {
-          return 'Hello World!';
-      }
-    });
-
-    server.route({
-      method: 'GET',
-      path: '/offers',
-      handler: (request, h) => {
-          return 'Offers API';
-      }
-    });
-
-    server.route({
       path: '/offers/{id}',
       method: 'GET',
       handler: (request, h) => {

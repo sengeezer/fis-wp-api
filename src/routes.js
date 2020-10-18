@@ -1,5 +1,5 @@
 module.exports = [
-  './routes/offerGet',
+  './routes/offersGet',
   './routes/offerPost',
   './routes/offerDelete'
 ].map((elem) => require(elem));
