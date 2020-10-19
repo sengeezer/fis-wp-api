@@ -16,8 +16,8 @@ const createOfferRoute = {
       }),
       failAction: handleError
     },
-    description: 'Add offer',
-    notes: 'Add an offer',
+    description: 'Create offer',
+    notes: 'Create an offer',
     tags: ['api']
   },
   handler: async (request, h) => {

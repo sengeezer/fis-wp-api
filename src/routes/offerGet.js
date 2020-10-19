@@ -8,8 +8,8 @@ const getOfferRoute = {
   options: {
     auth: false,
     validate: {
-      payload: Joi.object({
-        itemId: Joi.string().required().note('ID of item to retrieve from list')
+      params: Joi.object({
+        id: Joi.string().required().note('ID of item to retrieve from list')
       }),
       failAction: handleError
     },
@@ -19,13 +19,12 @@ const getOfferRoute = {
   },
   handler: async (request, h) => {
     let offerId = encodeURIComponent(request.params.id);
-    // let redispath = 'offersList';
+    let redispath = 'offersList';
     let { redis } = request.server.app;
-    // let { start, results } = request.query;
 
     try {
-      let listIndex = await redis.lposAsync(offerId);
-      let value = await redis.lindexAsync(listIndex);
+      let listIndex = await redis.lposAsync(redispath, offerId);
+      let value = await redis.lindexAsync(redispath, Number(listIndex));
 
       if (!value) {
         value = '';
