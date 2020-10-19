@@ -17,7 +17,6 @@ const getOffersRoute = {
     tags: ['api']
   },
   handler: async (request, h) => {
-    // let { sub: redispath } = request.auth.credentials;
     let redispath = 'offersList';
     let { redis } = request.server.app;
     let { start, results } = request.query;

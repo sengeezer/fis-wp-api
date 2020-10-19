@@ -16,7 +16,6 @@ const deleteOfferRoute = {
     tags: ['api']
   },
   handler: async (request, h) => {
-    // let { sub: redispath } = request.auth.credentials;
     let redispath = 'offersList';
     let { index: redisindex } = request.payload;
     let { redis } = request.server.app;
