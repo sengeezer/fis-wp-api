@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const Boom = require('@hapi/boom');
+const handleError = require('./utils/handleError');
 
 const getOfferRoute = {
   method: 'GET',
@@ -9,7 +10,8 @@ const getOfferRoute = {
     validate: {
       payload: Joi.object({
         itemId: Joi.string().required().note('ID of item to retrieve from list')
-      })
+      }),
+      failAction: handleError
     },
     description: 'Get offer',
     notes: 'Get an offer from the list',

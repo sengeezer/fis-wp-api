@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const Boom = require('@hapi/boom');
+const handleError = require('./utils/handleError');
 
 const getOffersRoute = {
   method: 'GET',
@@ -10,7 +11,8 @@ const getOffersRoute = {
       query: Joi.object({
         start: Joi.number().min(0).default(0).note('Start index of results inclusive'),
         results: Joi.number().min(1).max(100).default(10).note('Number of results to return')
-      })
+      }),
+      failAction: handleError
     },
     description: 'Get offers',
     notes: 'Get offers list in a paged format',

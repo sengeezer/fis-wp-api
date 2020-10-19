@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const Boom = require('@hapi/boom');
+const handleError = require('./utils/handleError');
 
 const deleteOfferRoute = {
   method: 'DELETE',
@@ -9,7 +10,8 @@ const deleteOfferRoute = {
     validate: {
       payload: Joi.object({
         index: Joi.number().min(0).required().note('Index to delete')
-      })
+      }),
+      failAction: handleError
     },
     description: 'Delete offer',
     notes: 'Delete an offer',
