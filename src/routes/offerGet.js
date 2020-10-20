@@ -23,8 +23,20 @@ const getOfferRoute = {
     let { redis } = request.server.app;
 
     try {
-      let listIndex = await redis.lposAsync(redispath, offerId);
-      let value = await redis.lindexAsync(redispath, Number(listIndex));
+      // This function is presently misnamed. Its intended use is to find
+      // an item ID that is not identical to its Redis list item ID.
+
+      let getListIndex = async () => {
+        let range = await redis.lrangeAsync(redispath, 0, -1);
+        
+        for (let i = 0; i < range.length; i++) {
+          if (i == offerId) {
+            return range[i];
+          }
+        }
+      };
+
+      let value = await getListIndex();
 
       if (!value) {
         value = '';

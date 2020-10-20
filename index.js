@@ -20,7 +20,7 @@ const init = async () => {
   redisClient.llenAsync = promisify(redisClient.llen).bind(redisClient);
   redisClient.lremAsync = promisify(redisClient.lrem).bind(redisClient);
   redisClient.lsetAsync = promisify(redisClient.lset).bind(redisClient);
-  redisClient.lposAsync = promisify(redisClient.lpos).bind(redisClient);
+  redisClient.lrangeAsync = promisify(redisClient.lrange).bind(redisClient);
   redisClient.lindexAsync = promisify(redisClient.lindex).bind(redisClient);
 
   redisClient.on('error', err => {
