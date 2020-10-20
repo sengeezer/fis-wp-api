@@ -30,7 +30,7 @@ const getOfferRoute = {
         value = '';
       }
 
-      return h.response({ value });
+      return h.response({ value: JSON.parse(value) });
     } catch (e) {
       return Boom.badImplementation(e);
     }
