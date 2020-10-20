@@ -8,6 +8,7 @@ A simple offers API written as a coding exercise.
 
 * Clone this repository.
 * Start the redis (database) container: `docker run --name nodejs-hapijs-redis -p 6379:6379 -d redis`
+* **Optional:** Import sample data into the redis database
 * Run `npm install` from the main directory.
 * Run `npm start` to start the API server.
 

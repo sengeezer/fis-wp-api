@@ -43,20 +43,6 @@ const init = async (serverOptions, options) => {
 
     server.route(require('./routes'));
 
-    /**
-    server.route({
-      path: '/offers/{id}',
-      method: 'GET',
-      handler: (request, h) => {
-        return `Offer ID: ${encodeURIComponent(request.params.id)}`;
-      }
-    });
-    */
-    
-    // await server.start();
-
-    // console.log('Server running on %s', server.info.uri);
-
     return server;
 };
 
