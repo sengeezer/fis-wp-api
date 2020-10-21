@@ -13,10 +13,13 @@ A simple offers API written as a coding exercise.
 
 ## Available routes
 
-* Go to [http://localhost:3000] after starting the server to see the API documentation.
+* Go to [http://localhost:3000](localhost:3000) after starting the server to see the API documentation.
 
 ## Next steps
 
+* Finish update offer route.
+* Add offer expiration check feature.
+* Add data validation unt tests.
 * Use UUID to generate unique offer IDs and update routes to resolve these.
 * Provide a means of seeding the database with sample data.
 * Move documentation to OpenAPI format (e.g. Swagger) to make it more useful.
@@ -25,4 +28,5 @@ A simple offers API written as a coding exercise.
 ## Credits
 
 * Some of the techincal architecture featured in this application was based on an [Auth0 article](https://auth0.com/blog/developing-modern-apis-with-nodejs-hapijs-and-redis).
+* [redis-commander](https://github.com/joeferner/redis-commander) for allowing me to easily visualize the redis database.
 
